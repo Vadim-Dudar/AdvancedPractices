@@ -24,10 +24,10 @@ public class StudentRegistryTest {
 
         registry.removeById("stu123");
 
-        Student student2 = new Student("Ivan Petrov", "ivan@mail.com", "stu123");
+        Student student2 = new Student("Ivan Petrov", "ivan@mail.com", "stu124");
         registry.addStudent(student2);
 
-        assertNotNull(registry.findById("stu123"));
+        assertNotNull(registry.findById("stu124"));
     }
 
     @Test

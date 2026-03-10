@@ -4,12 +4,12 @@ import java.util.*;
 
 public class StudentRegistry {
     List<Student> students = new ArrayList<>();
-    Set<String> email = new HashSet<>();
+    Set<String> emails = new HashSet<>();
     Map<String, Student> studentsById = new HashMap<>();
 
     public void addStudent(Student student) {
         students.add(student);
-        email.add(student.email);
+        emails.add(student.email);
         studentsById.put(student.id, student);
     }
 
@@ -18,7 +18,7 @@ public class StudentRegistry {
     }
 
     public boolean containsEmail(String email) {
-        return this.email.contains(email);
+        return this.emails.contains(email);
     }
 
     public void removeById(String id) {
@@ -27,7 +27,11 @@ public class StudentRegistry {
         if (student == null) return;
 
         students.removeIf(s -> s.equals(student));
-        email.remove(student.email);
+        emails.remove(student.email);
+    }
+
+    public Set<String> getEmails() {
+        return Set.copyOf(emails);
     }
 
 }

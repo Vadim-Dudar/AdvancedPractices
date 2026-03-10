@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Task2 {
 
-    private static  <T> T firstOrNull(List<T> list) {
+    private static <T> T firstOrNull(List<T> list) {
         if (list == null || list.isEmpty()) return null;
         return list.get(0);
     }
