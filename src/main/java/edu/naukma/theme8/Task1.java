@@ -2,6 +2,10 @@ package edu.naukma.theme8;
 
 import java.util.*;
 
+// Generics забезпечують type safety.
+// Вони дозволяють перевіряти типи під час компіляції,
+// прибирають необхідність кастів і запобігають ClassCastException у runtime.
+
 public class Task1 {
 
     public static void main(String[] args) {
