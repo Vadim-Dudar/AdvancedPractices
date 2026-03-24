@@ -8,6 +8,8 @@ import java.util.function.Predicate;
 
 public class Task1 {
     public static void main(String[] args) {
+//        Task 1 - 2
+
         Event e1 = new Event(
                 "Lesson 1",
                 Instant.now(),
@@ -40,7 +42,7 @@ public class Task1 {
                 "Practice"
         ));
 
-        List<Event> events = List.of(e1, e2, e3, e4);
+        List<Event> events = new java.util.ArrayList<>(List.of(e1, e2, e3, e4));
 
         System.out.println("All events");
         EventLab.notifyAll(events, e ->
@@ -70,5 +72,24 @@ public class Task1 {
         } else {
             conflicts.forEach(System.out::println);
         }
+
+//        Task3
+        System.out.println("\nsorting (anonymous)");
+        LambdaRefactorLab.sortAnonymous(events);
+        events.forEach(e -> System.out.println(e.label()));
+
+        System.out.println("\nsorting (lambda)");
+        LambdaRefactorLab.sortLambda(events);
+        events.forEach(e -> System.out.println(e.label()));
+
+        System.out.println("\nsorting (method ref)");
+        LambdaRefactorLab.sortMethodRef(events);
+        events.forEach(e -> System.out.println(e.label()));
+
+        //    Task 4
+        System.out.println("\nDateTimeLab");
+        System.out.println("instant e1: "+DateTimeLab.toInstant(e1));
+        System.out.println("minutes between e1 and e2: "+DateTimeLab.minutesBetween(e1,e2));
+        System.out.println("e1 in Europe/London: "+DateTimeLab.startInZone(e1,"Europe/London"));
     }
 }
