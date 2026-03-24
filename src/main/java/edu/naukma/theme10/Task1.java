@@ -1,5 +1,7 @@
 package edu.naukma.theme10;
 
+import edu.naukma.theme4.Task2;
+
 import java.time.Duration;
 import java.time.Instant;
 import java.time.ZoneId;
@@ -8,6 +10,8 @@ import java.util.function.Predicate;
 
 public class Task1 {
     public static void main(String[] args) {
+//        Task 1
+
         Event e1 = new Event(
                 "Lesson 1",
                 Instant.now(),
@@ -70,5 +74,18 @@ public class Task1 {
         } else {
             conflicts.forEach(System.out::println);
         }
+
+//        Task2
+        System.out.println("\nsorting (anonymous)");
+        LambdaRefactorLab.sortAnonymous(events);
+        events.forEach(e -> System.out.println(e.label()));
+
+        System.out.println("\nsorting (lambda)");
+        LambdaRefactorLab.sortLambda(events);
+        events.forEach(e -> System.out.println(e.label()));
+
+        System.out.println("\nsorting (method ref)");
+        LambdaRefactorLab.sortMethodRef(events);
+        events.forEach(e -> System.out.println(e.label()));
     }
 }
